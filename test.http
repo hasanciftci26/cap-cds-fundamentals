@@ -1,0 +1,70 @@
+###
+POST http://localhost:4004/odata/v4/personnel-management/Personnels
+Content-Type: application/json
+
+{
+    "ID": 1,
+    "firstName":"Hasan",
+    "tcNo": 111,
+    "toExpenses": [{
+        "text":"test"
+    }]
+}
+
+###
+POST http://localhost:4004/odata/v4/personnel-management/IdentityInformations
+Content-Type: application/json
+
+{
+    "tcNo":111,
+    "birthPlace": "Kütahya"
+}
+
+###
+POST http://localhost:4004/odata/v4/personnel-management/Cars
+Content-Type: application/json
+
+{
+    "ID":999,
+    "personnelID": 1
+}
+
+###
+POST http://localhost:4004/odata/v4/personnel-management/Cars
+Content-Type: application/json
+
+{
+    "ID":1000,
+    "personnelID": 1
+}
+
+###
+POST http://localhost:4004/odata/v4/personnel-management/Expenses
+Content-Type: application/json
+
+{   "toPersonnel_ID": 123123123,         
+    "text":"test"        
+}
+
+###
+PATCH http://localhost:4004/odata/v4/personnel-management/Personnels(9e60ac0a-b3e5-4eb3-b8b1-253dfc592ffa)
+Content-Type: application/json
+
+{
+    "firstName":"Ali Erbug"
+}
+
+###
+DELETE http://localhost:4004/odata/v4/personnel-management/Personnels(9e60ac0a-b3e5-4eb3-b8b1-253dfc592ffa)
+
+###
+GET http://localhost:4004/odata/v4/personnel-management/Personnels(7fc2a3d3-444d-4ce6-9931-d361c02569a6)
+
+###
+GET http://localhost:4004/odata/v4/personnel-management/Personnels
+
+###
+GET http://localhost:4004/odata/v4/personnel-management/Personnels?$filter=ID eq 7fc2a3d3-444d-4ce6-9931-d361c02569a6
+
+###
+DELETE http://localhost:4004/odata/v4/personnel-management/Personnels(1)
